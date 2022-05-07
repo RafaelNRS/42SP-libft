@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_split2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ranascim <ranascim@42.student.42sp.org.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/30 21:56:06 by ranascim          #+#    #+#             */
-/*   Updated: 2022/05/04 11:49:26 by ranascim         ###   ########.fr       */
+/*   Created: 2022/05/07 10:52:44 by ranascim          #+#    #+#             */
+/*   Updated: 2022/05/07 10:52:44 by ranascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-static size_t	ft_count_word(const char *s, char c)
+static size_t	ft_word_count(const char *s, char c)
 {
 	size_t	count;
 	size_t	i;
@@ -24,7 +25,7 @@ static size_t	ft_count_word(const char *s, char c)
 	while(s[i])
 	{
 		if (s[i] == c)
-			word = 0
+			word = 0;
 		else if (s[i] != c && word == 0){
 			word = 1;
 			count++;
@@ -34,34 +35,48 @@ static size_t	ft_count_word(const char *s, char c)
 	return (count);
 }
 
+static char **ft_fill_str(char const *s, char c, char **str_arr, size_t wc)
+{
+    size_t  i;
+    size_t  j;
+    size_t  iwc;
+
+    i = 0;
+    iwc = 0;
+    while (iwc < wc)
+    {
+        j = 0;
+        if (s[i] != c && s[i] != '\0')
+        {
+            while (s[i + j] != '\0' && s[i + j] != c)
+                j++;
+			str_arr[iwc] = (char *) ft_calloc(j + 1, sizeof(char));
+			j = 0;
+			while (s[i + j] != '\0' && s[i + j] != c)
+			{
+            	str_arr[iwc][j] = s[i + j];
+				j++;
+			}
+			iwc++;
+			
+        }
+		i = i + j + 1;
+    }
+    return (str_arr);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**str_arr;
-	size_t	cw;
+	size_t	wc;
 
-	cw = ft_count_word(s, c);
-	str_arr = (char **) malloc((cw + 1) * sizeof(char *));
+	if (!s)
+		return (NULL);
+	wc = ft_word_count(s, c);
+	str_arr = (char **) ft_calloc(wc + 1, sizeof(char *));
 	if (!str_arr)
 		return (NULL);
-	
-	int	i;
-	int	word;
-	int iwc;
-
-	i = 0;
-	word = -1;
-	iwc = 0;
-	
-	while(s[i]){
-		if (s[i] == c)
-			word = -1;
-		else if (word < 0)
-			word = i;
-		if (word >= 0 && (s[i + 1] == '\0' || s[i+1] == c))
-		{
-			str_arr[iwc] = (char *)malloc(sizeof(char) * (i - word + 2));
-		}
-		
-		i++;
-	}
+	ft_fill_str(s, c, str_arr, wc);
+	str_arr[wc] = '\0';
+	return (str_arr);
 }

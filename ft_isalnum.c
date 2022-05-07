@@ -6,7 +6,7 @@
 /*   By: ranascim <ranascim@42.student.42sp.org.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 19:02:52 by ranascim          #+#    #+#             */
-/*   Updated: 2022/04/10 21:24:39 by ranascim         ###   ########.fr       */
+/*   Updated: 2022/05/04 07:54:32 by ranascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 int	ft_isalnum(int c)
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || \
-											(c >= '0' && c <= '0'))
+	if (ft_isdigit(c) || ft_isalpha(c))
 		return (1);
 	return (0);
 }

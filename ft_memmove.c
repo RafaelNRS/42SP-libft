@@ -6,7 +6,7 @@
 /*   By: ranascim <ranascim@42.student.42sp.org.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 17:14:03 by ranascim          #+#    #+#             */
-/*   Updated: 2022/04/30 20:10:53 by ranascim         ###   ########.fr       */
+/*   Updated: 2022/05/04 07:47:26 by ranascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,13 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	char	*s;
-	char	*d;
+	const char	*s;
+	char		*d;
 
-	s = (char *)src;
-	d = (char *)dest;
+	if (!dest && !src)
+		return (NULL);
+	s = src;
+	d = dest;
 	if (s < d)
 	{
 		while (n--)

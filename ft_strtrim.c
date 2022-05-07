@@ -6,13 +6,13 @@
 /*   By: ranascim <ranascim@42.student.42sp.org.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/30 21:42:44 by ranascim          #+#    #+#             */
-/*   Updated: 2022/04/30 21:54:40 by ranascim         ###   ########.fr       */
+/*   Updated: 2022/05/04 08:52:19 by ranascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	i;
 	size_t	f;

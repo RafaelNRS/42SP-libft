@@ -6,7 +6,7 @@
 /*   By: ranascim <ranascim@42.student.42sp.org.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/30 20:34:40 by ranascim          #+#    #+#             */
-/*   Updated: 2022/04/30 20:42:24 by ranascim         ###   ########.fr       */
+/*   Updated: 2022/05/04 08:02:43 by ranascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	i;
-	int	n;
+	size_t	i;
+	long int	n;
 
 	i = 0;
 	n = -1;
-	while (s[i])
+	while (i <= ft_strlen(s))
 	{
 		if (s[i] == (char)c)
 			n = i;

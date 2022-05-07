@@ -6,7 +6,7 @@
 /*   By: ranascim <ranascim@42.student.42sp.org.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/30 20:19:35 by ranascim          #+#    #+#             */
-/*   Updated: 2022/04/30 20:28:25 by ranascim         ###   ########.fr       */
+/*   Updated: 2022/05/04 07:30:59 by ranascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		dst[i + ldst] = src[i];
 		i++;
 	}
-	dst[i + dstlen] = '\0';
+	dst[i + ldst] = '\0';
 	return (ldst + lsrc);
 }

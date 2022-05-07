@@ -6,7 +6,7 @@
 /*   By: ranascim <ranascim@42.student.42sp.org.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/30 20:59:07 by ranascim          #+#    #+#             */
-/*   Updated: 2022/04/30 21:08:00 by ranascim         ###   ########.fr       */
+/*   Updated: 2022/05/04 10:42:22 by ranascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,22 @@
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	int	i;
-	int	f;
+	unsigned int	i;
+	unsigned int	f;
 
 	i = 0;
-	f = 0;
+	
 	if (!*little)
 		return ((char *) big);
 	while (big[i] && i < len)
 	{
-		if (big[i] == little[f])
+		f = 0;
+		while (big[i + f] == little[f] && (i + f) < len)
 		{
 			if (little[f + 1] == '\0')
-				return ((char *) &str[i - f]);
+				return ((char *) &big[i]);
 			f++;
 		}
-		else
-			f = 0;
 		i++;
 	}
 	return (NULL);

@@ -6,7 +6,7 @@
 /*   By: ranascim <ranascim@42.student.42sp.org.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/30 21:17:54 by ranascim          #+#    #+#             */
-/*   Updated: 2022/05/02 02:38:16 by ranascim         ###   ########.fr       */
+/*   Updated: 2022/05/04 10:46:13 by ranascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,10 @@
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*p;
+	size_t	max;
 
-	if (nmemb == 0 || size == 0)
+	max = nmemb * size;
+	if (nmemb != 0 && (max / nmemb != size))
 		return (NULL);
 	p = malloc(nmemb * size);
 	if (!p)

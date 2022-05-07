@@ -6,7 +6,7 @@
 /*   By: ranascim <ranascim@42.student.42sp.org.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/30 20:11:26 by ranascim          #+#    #+#             */
-/*   Updated: 2022/04/30 20:18:51 by ranascim         ###   ########.fr       */
+/*   Updated: 2022/05/04 08:10:21 by ranascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	i = 0;
 	if (size > 0)
 	{
-		while (i < size - 1 && src[i])
+		while (src[i] && i < size - 1)
 		{
 			dst[i] = src[i];
 			i++;
 		}
-		dest[size - 1] = '\0';
+		dst[i] = '\0';
 	}
 	return (ft_strlen(src));
 }
