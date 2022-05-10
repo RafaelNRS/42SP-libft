@@ -6,7 +6,7 @@
 #    By: ranascim <ranascim@42.student.42sp.org.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/04 07:19:21 by ranascim          #+#    #+#              #
-#    Updated: 2022/05/10 18:22:11 by coder            ###   ########.fr        #
+#    Updated: 2022/05/10 19:01:02 by ranascim         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,14 +73,14 @@ $(NAME): $(SRC) $(LIB)
 		$(CC) $(CFLAGS) -c $(SRC) -I .
 		ar -rc $(NAME) $(OBJ)
 
+bonus: $(BONUS) $(LIB)
+		$(CC) $(CFLAGS) -c $(BONUS) -I .
+		ar -rc $(NAME) $(OBJ_BONUS)
+
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJ) $(OBJ_BONUS)
 
 fclean: clean
 	rm -f $(NAME)
 
-re:	fclean all
-
-bonus: $(BONUS) $(LIB)
-		$(CC) $(CFLAGS) -c $(BONUS) -I .
-		ar -rc $(NAME) $(OBJ_BONUS)
+re: fclean all

@@ -6,13 +6,13 @@
 /*   By: ranascim <ranascim@42.student.42sp.org.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 20:48:12 by ranascim          #+#    #+#             */
-/*   Updated: 2022/04/11 17:13:20 by ranascim         ###   ########.fr       */
+/*   Updated: 2022/05/10 18:51:16 by ranascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
 	char	*str;
 
