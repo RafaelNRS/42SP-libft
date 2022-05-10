@@ -6,7 +6,7 @@
 /*   By: ranascim <ranascim@42.student.42sp.org.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/30 20:45:39 by ranascim          #+#    #+#             */
-/*   Updated: 2022/05/04 08:28:35 by ranascim         ###   ########.fr       */
+/*   Updated: 2022/05/10 18:15:59 by ranascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	unsigned char	*mem;
-	unsigned int				i;
+	unsigned int	i;
 
 	mem = (unsigned char *)s;
 	i = 0;

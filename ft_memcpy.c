@@ -6,7 +6,7 @@
 /*   By: ranascim <ranascim@42.student.42sp.org.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 22:02:39 by ranascim          #+#    #+#             */
-/*   Updated: 2022/05/04 07:48:39 by ranascim         ###   ########.fr       */
+/*   Updated: 2022/05/10 18:17:49 by ranascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	const char	*s;
-	char	*d;
+	char		*d;
 
 	if (!dest && !src)
 		return (NULL);

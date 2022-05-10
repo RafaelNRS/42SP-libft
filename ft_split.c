@@ -21,11 +21,12 @@ static size_t	ft_word_count(const char *s, char c)
 	count = 0;
 	i = 0;
 	word = 0;
-	while(s[i])
+	while (s[i])
 	{
 		if (s[i] == c)
 			word = 0;
-		else if (s[i] != c && word == 0){
+		else if (s[i] != c && word == 0)
+		{
 			word = 1;
 			count++;
 		}
@@ -34,33 +35,33 @@ static size_t	ft_word_count(const char *s, char c)
 	return (count);
 }
 
-static char **ft_fill_str(char const *s, char c, char **str_arr, size_t wc)
+static char	**ft_fill_str(char const *s, char c, char **str_arr, size_t wc)
 {
-    size_t  i;
-    int  j;
-    size_t  iwc;
+	size_t	i;
+	int		j;
+	size_t	iwc;
 
-    i = 0;
-    iwc = 0;
-    while (iwc < wc)
-    {
-        j = 0;
-        if (s[i] != c && s[i] != '\0')
-        {
-            while (s[i + j] != '\0' && s[i + j] != c)
-                j++;
+	i = 0;
+	iwc = 0;
+	while (iwc < wc)
+	{
+		j = 0;
+		if (s[i] != c && s[i] != '\0')
+		{
+			while (s[i + j] != '\0' && s[i + j] != c)
+				j++;
 			str_arr[iwc] = (char *) ft_calloc(j + 1, sizeof(char));
 			j = 0;
 			while (s[i + j] != '\0' && s[i + j] != c)
 			{
-            	str_arr[iwc][j] = s[i + j];
+				str_arr[iwc][j] = s[i + j];
 				j++;
 			}
 			iwc++;
-        }
-		i = i +j + 1;
-    }
-    return (str_arr);
+		}
+		i = i + j + 1;
+	}
+	return (str_arr);
 }
 
 char	**ft_split(char const *s, char c)

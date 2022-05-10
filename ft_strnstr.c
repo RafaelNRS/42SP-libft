@@ -6,7 +6,7 @@
 /*   By: ranascim <ranascim@42.student.42sp.org.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/30 20:59:07 by ranascim          #+#    #+#             */
-/*   Updated: 2022/05/04 10:42:22 by ranascim         ###   ########.fr       */
+/*   Updated: 2022/05/10 18:02:46 by ranascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	unsigned int	f;
 
 	i = 0;
-	
 	if (!*little)
 		return ((char *) big);
 	while (big[i] && i < len)
