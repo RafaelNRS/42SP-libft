@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static size_t	ft_word_count(const char *s, char c)
 {
@@ -38,7 +37,7 @@ static size_t	ft_word_count(const char *s, char c)
 static char **ft_fill_str(char const *s, char c, char **str_arr, size_t wc)
 {
     size_t  i;
-    size_t  j;
+    int  j;
     size_t  iwc;
 
     i = 0;
@@ -58,9 +57,8 @@ static char **ft_fill_str(char const *s, char c, char **str_arr, size_t wc)
 				j++;
 			}
 			iwc++;
-			
         }
-		i = i + j + 1;
+		i = i +j + 1;
     }
     return (str_arr);
 }
