@@ -76,6 +76,6 @@ char	**ft_split(char const *s, char c)
 	if (!str_arr)
 		return (NULL);
 	ft_fill_str(s, c, str_arr, wc);
-	str_arr[wc] = '\0';
+	str_arr[wc] = NULL;
 	return (str_arr);
 }
